@@ -15,13 +15,14 @@ public class DetailServiceImpl implements DetailService {
 
     @Override
     public int addDetails(Details detail) {
-        Details save = detailRepo.save(detail);
-        return save.getId();
-    }
+        Details save = null;
+        try {
+            save = detailRepo.save(detail);
 
-    @Override
-    public int updateDetails(int id, Details detail) {
-        return 0;
+        } catch (Exception e) {
+            System.out.println("Exception => " + e.getMessage());
+        }
+        return save.getId();
     }
 
     @Override

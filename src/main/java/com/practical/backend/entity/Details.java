@@ -22,4 +22,5 @@ public class Details {
     private int parentCard;
     private String attributes;
     private String role;
+    private String timeDuration;
 }
